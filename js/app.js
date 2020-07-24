@@ -178,7 +178,10 @@ var app = (function() {
       animationDirection = 0;
     });
 
-    render();
+    setTimeout(function(){
+      positionTracker.increment(0.05);
+      render();
+    }, 100);
   }
 
   return {

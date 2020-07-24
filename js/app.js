@@ -13,6 +13,8 @@ var app = (function() {
   var bScrolling = false;
   var scrollingTimeout = null;
   var scrollingPosition = {position: 0, velocity: 0};
+  var animateStep = 0.0005;
+  var animationDirection = 0;
   //var iceExtent = new Story({'startScaled': 0.0, 'endScaled':1.0, 'directory': 'sea_ice', 'imgId':'ice-extent-img'});
  //iceExtent.compose(0.0);
 
@@ -118,6 +120,17 @@ var app = (function() {
       '1200 meters below the surface, 15,000 years ago... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.';
   }
 
+  function render(){
+    if (animationDirection !== 0) {
+      if (animationDirection > 0) positionTracker.increment(animateStep);
+      else positionTracker.decrement(animateStep);
+    }
+
+    requestAnimationFrame(function(){
+      render();
+    });
+  }
+
   function init(){
 
     // disable imagedrag, selection, rightclick, mouse cursor
@@ -149,6 +162,23 @@ var app = (function() {
     ui.init();
     ui.draw(0.0);
     // ipcRenderer.on('iwall:position', positionChanged);
+
+    $('#forward-arrow').on('mousedown', function(e){
+      console.log('mousedown forward')
+      animationDirection = 1;
+    });
+
+    $('#backward-arrow').on('mousedown', function(e){
+      console.log('mousedown backward')
+      animationDirection = -1;
+    });
+
+    $('.nav-arrow').on('mouseup', function(e){
+      console.log('mouseup')
+      animationDirection = 0;
+    });
+
+    render();
   }
 
   return {

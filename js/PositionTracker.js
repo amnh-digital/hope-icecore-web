@@ -125,15 +125,17 @@ class PositionTracker{
  		return this.position;
  	}
 
- 	increment(){
- 		this.currentPosition += KEYBOARD_RESOLUTION;
+ 	increment(amt){
+		amt = amt || KEYBOARD_RESOLUTION;
+ 		this.currentPosition += amt;
  		if(this.currentPosition > 1.0){
  			this.currentPosition = 1.0;
  		}
  	}
 
- 	decrement(){
- 		this.currentPosition -= KEYBOARD_RESOLUTION;
+ 	decrement(amt){
+		amt = amt || KEYBOARD_RESOLUTION;
+ 		this.currentPosition -= amt;
  		if(this.currentPosition < 0.0){
  			this.currentPosition = 0.0;
  		}

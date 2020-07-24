@@ -1,0 +1,16 @@
+{
+	"text": {
+		"title": "110,000 YEARS OF GREENLAND CLIMATE",
+		"body" : "Preserved in the ancient ice covering Greenland is a high-resolution, 110,000-year history of local climate. The record shows large swings in temperature that eventually stabilized around 11,700 years ago. A few thousand years later, humans developed agriculture.",
+		"description": "Greenland climate over 110,000 years, reconstructed from oxygen isotopes.",
+		"credit": ""
+	},
+  "graphs": [
+    {
+      "sourceFile": "data/oxygen.json",
+      "tag": "Temperature",
+      "color": "blue",
+      "colorError": "blue"
+    }
+  ]
+}

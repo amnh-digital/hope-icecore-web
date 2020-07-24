@@ -1,0 +1,95 @@
+.display-window{
+	position: absolute;
+    z-index: 1;
+    left: 32.7vw;
+    top: 12vh;
+    width: 16.7vw;
+    height: 56.3vh;
+    background-color: rgb(13, 35, 38);
+    clip-path: polygon(0% 0%, 86% 0%, 100% 7%, 100% 100%, 0% 100%);
+}
+
+.display-content{
+	position: absolute;
+	width: 16.7vw;
+	height: 56.3vh;
+	z-index: 2;
+	transition: margin-left 2s;
+	clip-path: polygon(2% 0%, 100% 0%, 100% 100%, 2% 100%);
+}
+
+#display-svg{
+	z-index: 10;
+}
+
+.dashboard-item{
+    height: 16.63%;
+    width: 99%;
+    display: grid;
+    grid-template-columns: 46% 54%;
+    color: var(--icecore-green);
+}
+
+.dashboard-item-sel{
+	background-color: rgb(2, 51, 57);
+	color: var(--icecore-white);
+}
+
+.dashboard-item-left{
+	text-align: right;
+}
+
+.dashboard-item-right{
+	grid-column: 2;
+}
+
+.data-text{
+	font-size: 2.7vh;
+	margin: 0;
+	margin-top: 4.3vh;
+}
+
+.dashboard-item-label{
+	font-size: 1.8vh;
+	color: var(--icecore-primary-color);
+	margin: 0;
+	margin-top: 1.8vh;
+}
+
+.dashboard-label{
+	font-size: 1.8vh;
+	margin-top: -1vh;
+	float: left;
+}
+
+.dashboard-sub-label{
+	font-size: 1.2vh;
+	margin-top: -0.5vh;
+	float: left
+}
+
+.ft{
+	margin-top: -0.29vh;
+	margin-left: 0.1vw;
+	clear: both;
+
+}
+
+.dashboard-sub-num{
+	font-size: 1.3vh;
+	margin-top: -0.7vh;
+	margin-right: 0.2vw;
+}
+
+.margined{
+	margin-right: 4px;
+}
+
+.under-arrow{
+	display: block;
+	margin-top: -3.2vh;
+}
+
+.arrow{
+	margin-top: 5vh;
+}

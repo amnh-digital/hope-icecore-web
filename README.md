@@ -1,1 +1,1 @@
-# -hope-icecore-web
+# Web version of HoPE Ice Core Interactive

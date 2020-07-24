@@ -1,0 +1,16 @@
+{
+	"text": {
+		"title": "RECENT CLIMATE",
+		"body" : "For several thousand years, climate has been relatively warm and stable, with only mild fluctuations compared to the ice age. During this time, humans thrived and established modern civilization. Now climate is changing due to human activity, triggering destructive consequences.",
+		"description": "Records from the last 12,000 years show a relatively stable climate coincided with rapid human advancement.",
+		"credit": ""
+	},
+  "graphs": [
+    {
+      "sourceFile": "data/oxygen12.json",
+      "tag": "Temperature",
+      "color": "blue",
+      "colorError": "blue"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+#story-container{
+	position: absolute;
+	width: 76vw;
+	height: 56.3vh;
+	left: 22vw;
+	top: 12vh;
+	clip-path: polygon(33% 0%, 100% 0%, 100% 100%, 33% 100%);
+	pointer-events: none;
+}
+
+#story{
+	position: relative;
+	width: 43vw;
+	height: 100%;
+	left: 25vw;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 91%, 93% 100%, 0% 100%);
+	will-change: transform;
+	transform: translate(-43vw, 0);
+	background-color: rgb(1, 1, 1);
+	overflow: hidden;
+	transition: all 1s;
+	transition-delay: 0.5s;
+}
+
+#story-svg{
+	position: absolute;
+	top: 0vh;
+	left: 0vw;
+}
+
+#content-holder{
+	position: relative;
+	left: 0vw;
+	transition-property: left;
+	transition-duration: 2s;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 66% 10% auto;
+}
+
+.story-img-credit{
+	position: relative;
+    /* color: white; */
+    color: rgb(65, 65, 65);
+    font-size: 0.9vh;
+    left: 32vw;
+    top: -37.2vh;
+    transform: rotate(90deg);
+    width: 18.2vw;
+}
+
+.story-img-desc{
+	position: absolute;
+    color: var(--icecore-primary-color);
+    font-size: 1.3vh;
+    left: 5vw;
+    top: 36vh;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.story-element{
+  margin-left: 5vw;
+	margin-right: 2vw;
+	text-align: left;
+}
+
+.story-element h2{
+	font-size: 2vh;
+}
+
+#story-graphic {
+	text-align: center;
+	width: 100%;
+	grid-row-start: 1;
+}
+
+#story-graphic-img {
+	height: 87%;
+	margin-top: 2.5vh;
+}
+
+#story-title {
+	color: var(--icecore-white);
+	grid-row-start: 2;
+    font-size: 2.7vh;
+    margin-top: 1vh;
+}
+
+#story-body {
+	color: var(--icecore-white);
+	font-size: 1.474vh;
+	column-count: 2;
+	grid-row-start: 3;
+	line-height: 25px;
+	letter-spacing: 0.6px;
+ 	height: 12vh;
+ 	width: 35.5vw;
+ 	column-gap: 1vw;
+ 	-webkit-font-smoothing: antialiased;
+}
+
+#story-graphic-graph-canvas{
+	position: absolute;
+    top: 30px;
+    left: 96px;
+    z-index: -19;
+}
+
+.story-graph-label{
+	position: absolute;
+	color: var(--icecore-primary-color);
+    font-size: 0.9vh;
+    float: left;
+    margin-top: 2.8vh;
+}
+
+#story-graph-label-1{
+}
+
+#story-graph-label-2{
+	margin-left: 8vw;
+}
+
+#story-graph-label-3{
+	margin-left: 14.8vw;
+	font-size: 1.35vh;
+	margin-top: 2.5vh;
+}
+
+#story-graph-label-4{
+	margin-left: 23.1vw;
+}
+
+#story-graph-label-5{
+	margin-left: 30.7vw;
+}
+
+#story-graph-y-label{
+    position: absolute;
+    transform: rotate(-90deg);
+    left: -6vw;
+    width: 20vw;
+    top: 17vh;
+}
+
+#left-arrow{
+	margin-bottom: -0.4vh;
+}
+
+#right-arrow{
+	margin-bottom: -0.4vh;
+}
+
+.story-blue-text{
+	color: var(--icecore-primary-color);
+}
+
+.story-orange-text{
+	color: var(--icecore-orange);
+	padding-left: 2.6vh;
+}
+
+.story-line-orange{
+	fill: none;
+  	stroke: var(--icecore-orange);
+  	stroke-width: 1;
+}
+
+.story-line-error-orange{
+	fill: var(--icecore-orange);
+  	stroke: var(--icecore-orange);
+  	opacity: 0.3;
+  	stroke-width: 1;
+}
+
+.story-line-blue{
+	fill: none;
+  	stroke: var(--icecore-primary-color);
+  	stroke-width: 1;
+}
+
+.story-line-error-blue{
+	fill: var(--icecore-primary-color);
+  	stroke: var(--icecore-primary-color);
+  	opacity: 0.3;
+  	stroke-width: 1;
+}
+
+.story-line-violet{
+	fill: none;
+  	stroke: var(--icecore-violet);
+  	stroke-width: 1;
+}
+
+.story-line-error-violet{
+	fill: var(--icecore-violet);
+  	stroke: var(--icecore-violet);
+  	opacity: 0.3;
+  	stroke-width: 1;
+}
+
+.story-line-yellow{
+	fill: none;
+  	stroke: var(--icecore-yellow);
+  	stroke-width: 1;
+}
+
+.story-line-error-yellow{
+	fill: var(--icecore-yellow);
+  	stroke: var(--icecore-yellow);
+  	opacity: 0.3;
+  	stroke-width: 1;
+}
+
+.story-graph-container{
+	height: 333px;
+    width: 617px;
+    position: relative;
+    left: 1.2vw;
+    top: 3vh;
+}
+
+
+.story-graph-title{
+	position: absolute;
+    left: -1.2vw;
+    width: 35.25vw;
+    top: 1vh;
+    text-align: center;
+    color: white;
+}
+
+#story-graph-title-2{
+	margin-top: 15vh;
+}
+
+.story-graph-title-bg{
+	background: rgb(16, 132, 153);
+	color: black;
+	padding: 0.2em;
+	font-size: 1.5vh;
+}
+
+#story-graph-title-single{
+	top: 9vh;
+}

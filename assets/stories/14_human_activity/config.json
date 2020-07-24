@@ -1,0 +1,22 @@
+{
+	"text": {
+		"title": "HUMAN ACTIVITY AND CLIMATE CHANGE",
+		"body" : "Since 1750, humans have added about 2,040 gigatons of heat-trapping CO₂ the atmosphere, mostly through burning fossil fuels such as oil and coal. Atmospheric CO₂ levels are now higher than at any point at least 800,000 years, and are rising at an unprecedented pace.",
+		"description": "Increases in atmospheric CO₂ levels coincide with warming events.",
+		"credit": ""
+	},
+	"graphs": [
+    	{
+      		"sourceFile": "data/co2b.json",
+      		"tag": "CO₂",
+      		"color": "yellow",
+      		"colorError": "yellow"
+    	},
+		{
+			"sourceFile": "data/oxygen.json",
+		 	"tag": "Temperature",
+		 	"color": "blue",
+		 	"colorError": "blue"
+		}
+	]
+}

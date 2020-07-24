@@ -1,0 +1,22 @@
+{
+	"text": {
+		"title": "SEA SALT",
+		"body" : "Greenland ice cores contain sea salt that was deposited by storms crossing the North Atlantic Ocean. Sea salt is used to study how storm paths and intensities changed with climate. These data show that during cold periods, North Atlantic storms hitting Greenland were severe.",
+		"description": "Records from GISP2 show that the sea salt content in ice rises when temperature falls.",
+		"credit": ""
+	},
+	"graphs": [
+    	{
+      		"sourceFile": "data/seasalt.json",
+      		"tag": "Sea Salt",
+      		"color": "violet",
+      		"colorError": "violet"
+    	},
+    	{
+			"sourceFile": "data/oxygen.json",
+		 	"tag": "Temperature",
+		 	"color": "blue",
+		 	"colorError": "blue"
+		}
+	]
+}

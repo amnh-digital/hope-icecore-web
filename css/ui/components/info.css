@@ -1,0 +1,202 @@
+.info-panel{
+	position: absolute;
+    width: 42vw;
+    height: 64vh;
+    top: 7.7vh;
+    left: 28vw;
+    background-color: rgb(13, 35, 38);
+    z-index: 100;
+    clip-path: polygon(0% 0%, 43% 0%, 50% 7%, 100% 7%, 100% 100%, 0% 100%);
+    color: var(--icecore-primary-color);
+    transition: all 0.5s;
+    -webkit-font-smoothing: antialiased;
+}
+
+#info-panel-1{
+	display: block;
+	background-image: url('../../../img/ScienceSource_SS2289586.png');
+	background-size: 85% auto;
+    background-repeat: no-repeat;
+    background-position: center 84%;
+}
+
+#info-panel-2{
+	display: block;
+}
+
+#info-panel-2-scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 98%;
+    height: 85%;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+#info-panel-2-body{
+    overflow: hidden;
+    /*padding-bottom: 100px;*/
+}
+
+.info-panel-tab{
+	position: relative;
+	width: 19vw;
+	height: 3vh;
+}
+
+.info-panel-close{
+	float: right;
+	height: 1.8vh;
+	margin-right: 1.4vw;
+	margin-top: 1.1vh;
+}
+
+#info-buttons{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 99%;
+	height: 11vh;
+}
+
+.info-button{
+	width: 7.5vw;
+    height: 4.3vh;
+    background-color: rgb(13, 35, 38);
+    margin-right: 0.75vw;
+    float: right;
+    margin-top: 3vh;
+    margin-bottom: auto;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 74%, 92% 100%, 0% 100%);
+    z-index: 1000;
+}
+
+.info-button-sub{
+	display: block;
+    font-size: 2.5vh;
+    margin-top: -0.6vh;
+    line-height: 2.7vh;
+}
+
+#info-buttons .title-text{
+	color: white;
+    font-family: BalanceOffcPro;
+    font-size: 4.6vh;
+    margin-top: 3.2vh;
+    margin-left: 0.9vw;
+    display: block;
+    float: left;
+    line-height: 5vh;
+    letter-spacing: -0.005em;
+}
+
+.info-button-label{
+	display: block;
+    float: left;
+    position: absolute;
+    color: var(--icecore-primary-color);
+    font-size: 1.2vh;
+    margin-left: 2.6vw;
+    margin-top: 0.4vh;
+}
+
+.info-button img{
+	position: absolute;
+	height: 2.4vh;
+	margin-left: 1vw;
+	margin-top: 0.6vh;
+}
+
+.info-button svg{
+	position: absolute;
+}
+
+.info-panel-tab img{
+    height: 1.8vh;
+    margin-left: 1vw;
+    margin-top: 2.6vh;
+}
+
+.info-panel-tab-label{
+	font-family: BalanceOffcPro;
+    font-size: 2.1vh;
+    position: absolute;
+    left: 3.3vw;
+    top: 2.4vh;
+    display: block;
+}
+
+.info-panel svg{
+	position: absolute;
+	top: 0;
+}
+
+.info-panel-content{
+	width: 37vw;
+    margin-left: 3.3vw;
+    column-count: 2;
+    margin-top: 4vh;
+    color: white;
+    line-height: 1.6em;
+}
+
+.info-panel p{
+  margin: 0 0 1vh 0;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+#info-panel-1 .info-panel-content{
+    height: 28vh;
+}
+
+.info-panel-content-2{
+  margin-top: 0;
+}
+
+.info-panel-content h2{
+	column-span: all;
+}
+
+.info-panel-column-right{
+	display: block;
+	padding-top: 1.6vh;
+}
+
+.info-panel-img{
+	width: 17vw;
+	height: auto;
+	float: right;
+	padding-bottom: 4vh;
+}
+
+.info-panel-img-desc{
+	margin-left: 3.2vw;
+  margin-top: 24vh;
+	font-size: 1.25vh;
+	width: 100%;
+}
+
+.info-panel-img-credit{
+	transform: rotate(90deg);
+    margin-left: 19vw;
+    margin-top: 10vh;
+    font-size: 0.95vh;
+    width: 100%;
+}
+
+.info-panel-header{
+	font-weight: bold;
+	font-size: 2vh;
+	display: block;
+	/*margin-top: -1.1vh;*/
+}
+
+#modal-closer{
+    position: absolute;
+    left: 0vw;
+    top: 10vh;
+    width: 100vw;
+    height: 90vh;
+}

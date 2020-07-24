@@ -1,0 +1,41 @@
+Modals:
+background: rgb(13, 35, 38)
+title text: rgb(16, 132, 153)
+body text: rgb(255, 255, 255)
+description: rgb(16, 132, 153)
+credit: rgb(16, 132, 153)
+
+Header:
+blue square: rgb(16, 132, 153)
+text: rgb(255, 255, 255)
+info button inactive: rgb(16, 132, 153)
+info button active: rgb(255, 255, 255)
+info button background: rgb(13, 35, 38)
+
+Dashboard:
+background: rgb(13, 35, 38)
+label text: rgb(16, 132, 153)
+info text inactive: rgb(81, 184, 72)
+info text active: rgb(255, 255, 255)
+item active: rgb(2, 51, 57)
+
+Graphs:
+background: rgb(13, 35, 38)
+all text: rgb(16, 132, 153)
+description intro: rgb(255, 255, 255)
+graph grid: rgb(13, 35, 38)
+graph line: rgb(16, 132, 153)
+graph line error: rgb(16, 132, 153, alpha)
+
+Storys:
+background: rgb(1, 1, 1)
+image caption: rgb(16, 32, 153)
+story title: rgb(255, 255, 255)
+story body: rgb(255, 255, 255)
+image credit: rgb(107, 108, 108)
+
+Story Graphs:
+blue: rgb(16, 132, 153)
+orange: rgb(243, 83, 39)
+violet: rgb(172, 77, 157)
+

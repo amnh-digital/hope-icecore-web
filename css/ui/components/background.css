@@ -1,0 +1,93 @@
+#ice-core-img{
+	position: absolute;
+	top: 10vh;
+	left: -6vw;
+    height: 47vh;
+	width: auto;
+	filter: url("#blur");
+}
+
+#title-rect{
+	width: 1.6vw;
+    height: 4vh;
+    margin-top: 3.3vh;
+    margin-left: 7.5vw;
+    background-color: var(--icecore-primary-color);
+    float: left;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 74%, 65% 100%, 0% 100%);
+}
+
+.ice-core-credit{
+	position: absolute;
+    color: var(--icecore-primary-color);
+    top: 60vh;
+    left: 13vw;
+    width: 11vw;
+    font-size: 1.3vh;
+    display: block;
+}
+
+#words-upper-right{
+    position: absolute;
+    top: 82.5vh;
+    right: 1.8vw;
+    color: var(--icecore-primary-color);
+    text-align: right;
+    transform: translateZ(0);
+}
+
+.words-blue-right{
+    margin-left: 1vw;
+}
+
+#words-lower-left{
+    position: absolute;
+    top: 91.9vh;
+    left: 1.8vw;
+    color: var(--icecore-primary-color);
+}
+
+#words-upper-left{
+    position: absolute;
+    top: 82.5vh;
+    left: 1.8vw;
+    color: var(--icecore-primary-color);
+}
+
+#words-lower-right{
+    position: absolute;
+    top: 91.9vh;
+    right: 1.8vw;
+    color: var(--icecore-primary-color);
+    text-align: right;
+    transform: translateZ(0);
+}
+
+.words-blue{
+    margin-bottom: -1.6vh;
+    background-color: var(--icecore-primary-color);
+    color: black;
+    padding: 0.3vh;
+    line-height: 1.1vh;
+}
+
+.words-text{
+    font-size: 1.3vh;
+}
+
+.words-blue-bg{
+    background-color: : var(--icecore-primary-color);
+    color: rgb(0,0,0);
+}
+
+.words-no-bg{
+    color: rgb(0, 0, 0);
+}
+
+.words-lower{
+
+}
+
+.ice-core-bg-img{
+    display: none;
+}

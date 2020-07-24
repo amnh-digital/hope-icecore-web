@@ -1,0 +1,333 @@
+#graph-container{
+  position: absolute;
+  width: 43vw;
+  height: 37.8vh;
+  top: 30.7vh;
+  left: 11vw;
+  clip-path: polygon(0% 0%, 50% 0%, 50% 101%, 0% 100%);
+}
+
+#graph{
+  width: 22vw;
+  height: 99.5%;
+  will-change: transform;
+  background-color: rgb(13, 35, 38);
+  transform: translate(21vw, 0);
+  transition: all 1s;
+  display: grid;
+  grid-template-rows: 15% 45% 40%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%, 0% 95%);
+}
+
+#graph-top{
+  grid-row-start: 1;
+}
+
+#graph-middle{
+  grid-row-start: 2;
+}
+
+#graph-bottom{
+  grid-row-start: 3;
+}
+
+#graph-title{
+  width: 100%;
+  color: var(--icecore-primary-color);
+  font-size: 2.3vh;
+  margin-top: 2vh;
+  margin-left: 3vw;
+  text-transform: lowercase;
+  font-family: BalanceScOffcPro;
+  font-variant: small-caps;
+}
+
+#graph-display-svg{
+  margin-left: 3vw;
+  margin-top: 1vh;
+}
+
+#graph-svg{
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+}
+
+#graph-svg-locator{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid white 1px;
+}
+
+#locator{
+  position: absolute;
+  width: 1px;
+  border-left: 1px solid var(--icecore-primary-color);
+  height: 156px;
+  top: 70px;
+  left: 83vh;
+}
+
+.present-value{
+  position: absolute;
+  left: 2.9vw;
+  top: 6vh;
+  background-color: var(--icecore-primary-color);
+  width: 16.2vw;
+  height: 0.14vh;
+  border-radius: 5px;
+}
+
+.present-value div{
+  position: absolute;
+  top: -1.5vh;
+  left: 4.1vw;
+  height: 1.6vh;
+  width: 5vw;
+  text-align: center;
+  font-family: BalanceOffcPro;
+  color: black;
+  background-color: var(--icecore-primary-color);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.present-value-text{
+  display: block;
+  padding-top: 0.3vh;
+  font-size: 0.95vh;
+}
+
+#present-value-story{
+  width: 35vw;
+  left: -0.95vw;
+}
+
+#present-value-story-tab{
+  left: 13.4vw;
+}
+
+.axis line{
+  stroke: var(--icecore-primary-color);
+}
+
+.axis path{
+  stroke: var(--icecore-primary-color);
+}
+
+.axis text{
+  fill: var(--icecore-primary-color);
+}
+
+.line{
+  fill: none;
+  stroke: var(--icecore-primary-color);
+  stroke-width: 1;
+}
+
+.line-error{
+  fill: var(--icecore-primary-color);
+  stroke: var(--icecore-primary-color);
+  opacity: 0.3;
+  stroke-width: 1;
+}
+
+.grid line {
+  stroke: rgb(13, 35, 38);
+  stroke-width: 2;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+
+.grid path{
+  stroke-width: 0;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+
+#graph-nav{
+  position: absolute;
+  top: 30.7vh;
+  left: 31.2vw;
+  z-index: 10;
+  width: 3.8vw;
+  height: 37.6vh;
+  background-color: rgb(13, 35, 38);
+  display: grid;
+  grid-template-rows: 25% 25% 25% 25%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 33% 100%, 0% 94%);
+  transition-duration: all 1s;
+}
+
+#graph-nav-svg{
+  position: absolute;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.graph-nav-item{
+  width: 100%;
+  /*padding-top: 1vh;*/
+  border-left: 1px solid rgba(16, 132, 153, 1.0);
+}
+
+.graph-nav-item-1{
+  grid-row-start: 1;
+  border-bottom: 1px solid var(--icecore-primary-color);
+}
+
+.graph-nav-item-2{
+  /*padding-top: 1.5vh;*/
+  grid-row-start: 2;
+  border-bottom: 1px solid var(--icecore-primary-color);
+}
+
+.graph-nav-item-3{
+  grid-row-start: 3;
+  border-bottom: 1px solid var(--icecore-primary-color);
+}
+
+.graph-nav-item-4{
+  grid-row-start: 4;
+}
+
+.graph-nav-item img{
+  /*height: 3.2vh;*/
+  display: block;
+  width: 95%;
+  margin: auto;
+  /*margin-top: 1.4vh;*/
+}
+
+.graph-nav-item-2 img
+{  /*height: 2.2vh;*/
+}
+
+.graph-nav-item-1 img{
+  /*height: 3.5vh;*/
+}
+
+.graph-nav-item-sel{
+  border-left: solid 1px rgba(16, 132, 153, 0.0);
+  background-color: rgb(2, 51, 57);
+  color: white;
+}
+
+.graph-nav-item-sel img{
+  filter: brightness(0) invert(1);
+}
+
+.graph-nav-item-sel-a{
+  border-top: 2px solid var(--icecore-primary-color);
+}
+
+
+.graph-desc-text{
+  color: var(--icecore-primary-color);
+  margin: 3vw;
+  margin-top: 1vh;
+  font-size: 1.4vh;
+  line-height: 1.6em;
+}
+
+#graph-y-label{
+  position: absolute;
+  top: 13vh;
+  left: -2.9vw;
+  text-align: center;
+  width: 9vw;
+  transform: rotate(-90deg);
+  color: var(--icecore-primary-color);
+  font-size: 1.7vh;
+}
+
+.graph-y-label-text{
+  position: relative;
+  left: 1.1vw;
+}
+
+#graph-y-label-bottom{
+  top: 16.5vh;
+}
+
+#graph-y-label-middle{
+  top: 10vh;
+}
+
+#graph-y-label-top{
+  top: 3.8vh;
+}
+
+#graph-x-label{
+  position: absolute;
+  left: 2.5vw;
+  top: 14vh;
+}
+
+#graph-x-label-left{
+  margin-left: 3vw;
+}
+
+#graph-x-label-mid{
+  margin-left: 9.7vw;
+}
+
+#graph-x-label-right{
+  position: absolute;
+  margin-left: 16.1vw;
+}
+
+.graph-x-label-text{
+  color: var(--icecore-primary-color);
+  font-family: BalanceOffcPro;
+  font-size: 1.2vh;
+  float: left;
+  margin-top: -3vh;
+}
+
+#story-graphic-img{
+
+}
+
+#story-graphic-graph{
+  display: none;
+}
+
+#graph-canvas{
+  position: absolute;
+  top: 75px;
+  left: 59px;
+  z-index: -19;
+}
+
+.graph-component-double{
+  position:relative;
+  left: -1.2vw;
+  width: 677px;
+  height: 161px;
+}
+
+.graph-component{
+  width: 677px;
+  height: 322px;
+  position: relative;
+  left: -1.2vw;
+}
+
+.graph-component-main{
+  width: 305px;
+  /*height: 151px;*/
+  height: 100%;
+}
+
+.graph-description-white{
+  color: var(--icecore-white);
+}

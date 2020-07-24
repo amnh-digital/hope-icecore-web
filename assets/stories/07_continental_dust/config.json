@@ -1,0 +1,22 @@
+{
+	"text": {
+		"title": "CONTINENTAL DUST",
+		"body" : "Winds blowing across Asia carried dust from arid regions east to Greenland. Dust levels in the ice core were at their highest during cold periods, when dry, windy conditions allowed more dust to reach Greenland. The dust and sea salt content in ice usually correlate with one another.",
+		"description": "Cool periods correspond to peaks in dust levels, while dust content falls during warm periods.",
+		"credit": ""
+	},
+	"graphs": [
+		{
+			"sourceFile": "data/calcium.json",
+		 	"tag": "Dust",
+		 	"color": "orange",
+		 	"colorError": "orange"
+		},
+		{
+			"sourceFile": "data/oxygen.json",
+		 	"tag": "Temperature",
+		 	"color": "blue",
+		 	"colorError": "blue"
+		}
+	]
+}

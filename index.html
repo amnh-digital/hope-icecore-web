@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>amnh-hope-icecore</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/ui/components/graph.css">
+    <link rel="stylesheet" type="text/css" href="css/ui/components/story.css">
+    <link rel="stylesheet" type="text/css" href="css/ui/components/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/ui/components/info.css">
+    <link rel="stylesheet" type="text/css" href="css/ui/components/background.css">
+    <link rel="stylesheet" type="text/css" href="css/ui/components/attract.css">
+    <link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.css">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters">
+      <defs>
+        <filter id="blur">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="0,0" />
+        </filter>
+      </defs>
+    </svg>
+    <img id="ice-core-img" class="motion-blur blurrable"/>
+    <span id="ice-core-img-label" class="ice-core-credit blurrable">*This ice core image represents lorem ipsum</span>
+    <canvas id="canvas-tl" width="1920" height="1080" class="canvas blurrable"></canvas>
+    <canvas id="canvas" width="1920" height="1080" class="canvas blurrable"></canvas>
+    <div id="display" class="display-window blurrable">
+      <div id="dashboard" class="display-content" >
+        <div class="dashboard-item">
+          <div class="dashboard-item-left">
+            <div class="data-text margined" id="dyn-time">100,000</div>
+          </div>
+          <div class="dashboard-item-right">
+            <div class="dashboard-item-label small-caps">date</div>
+            <br/>
+            <div class="dashboard-label" id="date-years">years</div><div class="dashboard-sub-label" id="date-ago"> &nbsp ago</div>
+          </div>
+        </div>
+        <div class="dashboard-item">
+          <div class="dashboard-item-left dashboard-item-upper">
+            <div class="data-text margined" id="dyn-depth">1800</div>
+            <div class="dashboard-sub-num" id="depth-ft"> 234 </div>
+          </div>
+          <div class="dashboard-item-right">
+            <div class="dashboard-item-label small-caps">depth</div>
+            <br/>
+            <div class="dashboard-label" id="depth-meters">meters</div><div class="dashboard-sub-label" id="depth-below"> &nbsp below surface</div>
+            <div class="dashboard-sub-label ft">feet</div>
+          </div>
+        </div>
+        <div id="dashboard-item-0" class="dashboard-item">
+          <div class="dashboard-item-left">
+            <div class="data-text margined" id="dyn-temperature">1.3</div>
+            <div class="dashboard-sub-num" id="temp-f"> 234 </div>
+          </div>
+          <div class="dashboard-item-right">
+            <div class="dashboard-item-label small-caps">greenland temp.</div>
+            <br/>
+            <div id="temp-label" class="dashboard-label">&#176;C relative</div><div id="temp-sub-label" class="dashboard-sub-label"> &nbsp to today</div>
+            <div id="temp-sym" class="dashboard-sub-label ft">&#176;F</div>
+          </div>
+        </div>
+        <div id="dashboard-item-1" class="dashboard-item">
+          <div class="dashboard-item-left">
+            <div class="data-text margined" id="dyn-co2">200</div>
+          </div>
+          <div class="dashboard-item-right">
+            <div class="dashboard-item-label small-caps">global co<sub>2</sub></div>
+            <br/>
+            <div id="co2-label" class="dashboard-label">ppm</div><div id="co2-sub-label" class="dashboard-sub-label"> &nbsp (parts per million)</div>
+          </div>
+        </div>
+        <div id="dashboard-item-2" class="dashboard-item">
+          <div class="dashboard-item-left">
+            <!--<h2><span class="margined green-text">&#9650;</span></h2>-->
+            <div class="data-text margined" id="dyn-sealevel">TK</div>
+            <div class="dashboard-sub-num" id="s-depth-ft"> TK </div>
+          </div>
+          <div class="dashboard-item-right">
+            <div class="dashboard-item-label small-caps">global sea level</div>
+            <br/>
+            <div id='sea-label' class="dashboard-label">m relative</div><div id="sea-sub-label" class="dashboard-sub-label"> &nbsp to today</div>
+            <div id="sea-sym" class="dashboard-sub-label ft">feet</div>
+          </div>
+        </div>
+        <div id="dashboard-item-3" class="dashboard-item">
+          <div class="dashboard-item-left">
+            <!--<h2><span class="margined green-text">&#9650;</span></h2>-->
+            <div class="data-text margined" id="dyn-population">10</div>
+          </div>
+          <div class="dashboard-item-right">
+            <div class="dashboard-item-label small-caps">global population</div>
+            <br/>
+            <div class="dashboard-label" id="pop-denom">thousand</div>
+            <div id="pop-sub-label" class="dashboard-sub-label"> &nbsp (est.)</div>
+          </div>
+        </div>
+      </div>
+      <svg id="display-svg" width="100%" height="100%"></svg>
+    </div>
+    <div id="graph-nav" class="blurrable">
+      <div class="graph-nav-item graph-nav-item-1"><img src='img/temperature.svg'/></div>
+      <div class="graph-nav-item graph-nav-item-2"><img src='img/co2.svg'/></div>
+      <div class="graph-nav-item graph-nav-item-3"><img src='img/sea_level.svg'/></div>
+      <div class="graph-nav-item graph-nav-item-4"><img src='img/population.svg'/></div>
+      <svg id="graph-nav-svg" width="100%" height="100%"></svg>
+    </div>
+    <div id="graph-container" class="blurrable">
+      <div id="graph">
+        <div id="graph-top">
+          <div id="graph-title">
+            GRAPH TITLE
+          </div>
+        </div>
+        <div id="graph-middle">
+          <canvas id="graph-canvas" width="305" height="151"></canvas>
+          <svg id="graph-display-svg" class="graph-component-main">
+          </svg>
+          <!--<svg id="graph-svg-locator" class="graph-component" width="80%" height="55%">-->
+          <div id="locator"></div>
+          <div id="graph-y-label">GLOBAL CO<sub>2</sub></div>
+
+          <!--Disabled. Graph y axis labels.-->
+          <!--
+          <div id="graph-y-label-bottom" class="graph-y-label-text graph-x-label-text">-1.5</div>
+          <div id="graph-y-label-middle" class="graph-y-label-text graph-x-label-text">0.0</div>
+          <div id="graph-y-label-top" class="graph-y-label-text graph-x-label-text">1.5</div>
+          -->
+          <div id="graph-x-label"></div>
+          <div id="graph-x-label-left" class="graph-x-label-text">110,000</div>
+          <div id="graph-x-label-mid" class="graph-x-label-text">years ago</div>
+          <div id="graph-x-label-right" class="graph-x-label-text">10,000</div>
+          <div id="present-value-main" class="present-value">
+            <div><span class="present-value-text">present</span></div>
+          </div>
+        </div>
+        <div id="graph-bottom">
+          <div id="graph-desc" class="graph-desc-text">
+          </div>
+        </div>
+        <svg id="graph-svg" width="100%" height="100%"></svg>
+      </div>
+    </div>
+    <div id="story-container" class="blurrable">
+      <div id="story">
+        <div id="content-holder">
+          <div id="story-graphic" class="story-element">
+            <img id="story-graphic-img"></img>
+            <div id="story-graphic-graph-single" class='story-graph-container'>
+              <svg id="story-graphic-graph" class="graph-component"></svg>
+              <div id="present-value-story" class="present-value">
+                <div id="present-value-story-tab"><span class="present-value-text">present</span></div>
+              </div>
+              <div id="story-graph-title-single" class="story-graph-title">
+                <span id="story-graph-title-bg-single" class="story-graph-title-bg">Temperature</span>
+              </div>
+            </div>
+            <div id="story-graphic-graph-double" class='story-graph-container'>
+              <svg id="story-graphic-graph-1" class="graph-component-double"></svg>
+              <svg id="story-graphic-graph-2" class="graph-component-double"></svg>
+              <div id="story-graph-title-1" class="story-graph-title">
+                <span id="story-graph-title-bg-1" class="story-graph-title-bg">Sea Salt</span>
+              </div>
+              <div id="story-graph-title-2" class="story-graph-title">
+                <span id="story-graph-title-bg-2" class="story-graph-title-bg">Temperature</span>
+              </div>
+            </div>
+            <canvas id="story-graphic-graph-canvas" width="677" height="328"></canvas>
+            <div id="story-graph-x-label">
+              <div id="story-graph-label-1" class="story-graph-label">110,000</div>
+              <div id="story-graph-label-2" class="story-graph-label">85,000</div>
+              <div id="story-graph-label-3" class="story-graph-label">years ago</div>
+              <div id="story-graph-label-4" class="story-graph-label">35,000</div>
+              <div id="story-graph-label-5" class="story-graph-label">10,000</div>
+            </div>
+            <div id="story-graph-y-label">
+              <img id="left-arrow" src="img/left_arrow.png"/>
+              <span class="story-blue-text">cooler</span>
+              <span class="story-orange-text">warmer</span>
+              <img id="right-arrow" src="img/right_arrow.png"/>
+            </div>
+            <div id="story-description" class="story-img-desc">Photo Identification</div>
+          </div>
+          <div id="story-credit" class="story-img-credit">Jeffrey Greenburg/Image Source</div>
+          <div id="story-title" class="story-element small-caps"></div>
+          <div id="story-body" class="story-element"></div>
+        </div>
+        <svg id="story-svg" width="100%" height="100%"></svg>
+      </div>
+    </div>
+    <div id="info-buttons">
+      <div id="title-rect"></div>
+      <span class="title-text">What do ice cores tell us?</span>
+      <div id="info-button-2" class="info-button small-caps">
+        <span id="info-panel-text-2" class="info-button-label">ABOUT THE <br/><span class="info-button-sub">DATA</span></span>
+        <svg id="info-button-2-svg" width="100%" height="100%"></svg>
+      </div>
+      <div id="info-button-1" class="info-button small-caps">
+        <span id="info-panel-text-1" class="info-button-label">ABOUT THE <br/><span class="info-button-sub">CORE</span></span>
+        <svg id="info-button-1-svg" width="100%" height="100%"></svg>
+      </div>
+    </div>
+    <div id="info-panel-1" class="info-panel">
+      <div class="info-panel-tab">
+        <span class="info-panel-tab-label">ABOUT THE ICE CORE</span>
+        <img class="info-panel-close" src='img/info_panel_close.svg'>
+      </div>
+      <div class="info-panel-content">
+        <!--
+        <img class="info-panel-img" src="img/content_ice_core.jpg"/>
+        -->
+        <p>
+        The model displayed here is based on the ice core drilled by the Greenland Ice Sheet Project 2 (GISP2). The actual core is three kilometers (1.9 miles) long; this model is three meters (9.8 feet) long.</p>
+        <p>
+        GISP2 is one of several long ice cores drilled into the Greenland Ice Sheet, which together document nearly 130,000 years of <br/>Greenland climate.
+        </p>
+        <p>
+        Data from these and other ice cores from around world inform our understanding of past climate at the regional, hemispheric and global scale. As ice sheets and glaciers melt due to human-caused climate change, these records could be lost forever.
+        </p>
+        <p>
+        GISP2 ice core scans from USGS/National Snow & Ice Data Center
+        </p>
+        <p><small><i>Special thanks to Peggy Weil for assistance with core images</i></small>
+        </p>
+      </div>
+      <div class="info-panel-img-desc">
+        Heavy-duty drills like this one are used to extract ice cores from ice sheets
+      </div>
+      <div class="info-panel-img-credit">
+        Steven Profaizer/NSF/Science Source
+      </div>
+      <svg id="info-panel-1-svg" width="100%" height="100%"></svg>
+    </div>
+    <div id="info-panel-2" class="info-panel">
+      <div class="info-panel-tab">
+        <span class="info-panel-tab-label">ABOUT THE DATA</span>
+        <img class="info-panel-close" src='img/info_panel_close.svg'>
+      </div>
+      <div id="info-panel-2-scroll">
+      <div id="info-panel-2-body" class="info-panel-content info-panel-content-2">
+        <p>
+        <span class="info-panel-header">As you move along the ice core, you can see how temperature, carbon dioxide and other factors have changed over the last 110,000 years. Where are these data from?</span>
+        </p>
+        <p><b>Temperature:</b> Data are from studies of Greenland ice cores using ratios of various isotopes in the ice to derive past temperature. For example, low ratios of light to heavy oxygen isotopes indicate cooler temperatures; higher ratios reflect warmer periods.
+        </p>
+        <p><b>Global carbon dioxide:</b> Air bubbles trapped in ice can be analyzed for climate data, including past atmospheric CO₂ levels. The best ice-core CO₂ records are from Antarctica, where the snow is uncontaminated by other forms of carbon. Because greenhouse gases are mixed throughout the atmosphere, Antarctic records accurately reflect global CO₂ concentrations. Data are from Antarctic ice cores drilled at Law Dome, EPICA Dome C and Vostok Station.
+        </p>
+        <p>Data after 1958 are direct measurements from the Mauna Loa Observatory in Hawai’i.
+        </p>
+        <p><b>Global sea level:</b> These data are drawn from studies of marine sediment cores containing the remains of shelled organisms. Oxygen isotope ratios in these remains can be used to reconstruct past sea levels. Changes in the global average sea level do not necessarily apply to individual coastlines.
+        </p>
+        <p><b>Estimated human population:</b> Pre-1950 population estimates are from the HYDE 3.1 database maintained by the Netherlands Environmental Assessment Agency. More recent data are from the UN Population Division.
+        </p>
+        <p><b>Resolution of data:</b> As data go back further in time, the resolution of data decreases and error bars increase.
+        </p>
+        <p><i>SOURCES</i>
+        </p>
+        <p>Most data can be found through the World Data Service for Paleoclimatology and the National Centers for Environmental Information.
+        </p>
+        <p>GISP2 Meese/Sowers Timescale (D. Meese et al., 1993)
+        </p>
+        <p>GISP2 Oxygen Isotope Data (P.M. Grootes and M. Stuiver, 1997)
+        </p>
+        <p>GISP2 Ice Core Temperature and Accumulation Data (R.B. Alley, 2004)
+        </p>
+        <p>GISP2 Ice Core 4,000-year Ar-N Isotope Temperature Reconstruction (T. Kobashi et al. 2012)
+        </p>
+        <p>GISP2 Ions: Deep (D) Core (P.A. Mayewski et al. 1997)
+        </p>
+        <p>NGRIP Ice Core MIS3 CH4, ẟ15N and Temperature Data (C. Huber et al. 2006)
+        </p>
+        <p>Law Dome Ice Core 2,000-year CO₂, CH4 and N2O Data (D.M. Etheridge et al. 2010)
+        </p>
+        <p>EPICA Dome C Ice Core High Resolution Holocene and Transition CO₂ Data (E. Monnin et al. 2004)
+        </p>
+        <p>Historical CO₂ Record from the Vostok Ice core (J.M. Barnola et al. 2003)
+        </p>
+        <p>Sea-level and Deep Water Temperature 430,000-year Reconstructions (C. Waelbroeck et al. 2010)
+        </p>
+        <p>HYDE 3.1 (Klein Goldewijk et al. 2010); (Klein Goldewijk et al. 2011)
+        </p>
+      </div>
+      </div>
+      <svg id="info-panel-2-svg" width="100%" height="100%"></svg>
+    </div>
+    <div id="words-upper-left" class="blurrable words-text">
+      <div class="words-blue">years</div>
+      <br/>ago
+    </div>
+    <div id="words-lower-left" class="blurrable words-text">
+      <div class="words-blue words-lower">meters</div>
+      <br/>below
+      <br/>surface
+    </div>
+    <div id="words-upper-right" class="blurrable words-text">
+      <div class="words-blue words-blue-right">years</div>
+      <br/>ago
+    </div>
+    <div id="words-lower-right" class="blurrable words-text">
+      <div class="words-blue words-lower words-blue-right">meters</div>
+      <br/>below
+      <br/>surface
+    </div>
+    <div id="attract-container">
+      <canvas id="canvas-attract-mask" width="1920" height="1080" class="canvas"></canvas>
+      <canvas id="canvas-attract" width="1920" height="1080" class="canvas"></canvas>
+      <img id="attract-left" class="attract-img" src="img/attract_left.png">
+      <img id="attract-right" class="attract-img" src="img/attract_right.png">
+    </div>
+    <div id="modal-closer"></div>
+    <img id="layout-overlay" src="img/layout/062918_Icecore-IA-01-0.png"/>
+
+    <script src='js/vendor/jquery-3.4.1.min.js'></script>
+    <script src='js/vendor/d3.min.js'></script>
+    <script src='js/utils.js'></script>
+
+    <script src='js/ui/components/timeline.js'></script>
+    <script src='js/ui/components/analytics.js'></script>
+    <script src='js/ui/components/arrow.js'></script>
+    <script src='js/ui/components/attract.js'></script>
+    <script src='js/ui/components/background.js'></script>
+    <script src='js/ui/components/dashboard.js'></script>
+    <script src='js/ui/components/graph.js'></script>
+    <script src='js/ui/components/info.js'></script>
+    <script src='js/ui/components/story.js'></script>
+
+    <script src='data/DataSource.js'></script>
+    <script src='data/Timescale.js'></script>
+    <script src='data/Temperature.js'></script>
+    <script src='data/CarbonDioxide.js'></script>
+    <script src='data/SeaLevel.js'></script>
+    <script src='data/Population.js'></script>
+    <script src='data/DataEmitter.js'></script>
+
+    <script src='js/ui/config.js'></script>
+    <script src='js/ui/ui.js'></script>
+
+    <script src='js/PositionTracker.js'></script>
+    <script src='js/app.js'></script>
+  </body>
+</html>

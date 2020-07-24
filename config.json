@@ -1,0 +1,40 @@
+{
+	"labels": [
+		{
+			"type": "time",
+			"val": "100,000"
+		},
+		{
+			"type": "time",
+			"val": "75,000"
+		},
+		{
+			"type": "time",
+			"val": "50,000"
+		},
+		{
+			"type": "time",
+			"val": "25,000"
+		},
+		{
+			"type": "depth",
+			"val": "2,500"
+		},
+		{
+			"type": "depth",
+			"val": "2,000"
+		},
+		{
+			"type": "depth",
+			"val": "1,500"
+		},
+		{
+			"type": "depth",
+			"val": "1,000"
+		},
+		{
+			"type": "depth",
+			"val": "500"
+		}
+	]
+}

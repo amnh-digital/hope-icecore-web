@@ -1,0 +1,108 @@
+@font-face{
+  font-family: BalanceOffcPro;
+  src: url('../assets/fonts/OpenType TTF Pro/BalanceOffcPro.ttf');
+}
+
+@font-face{
+  font-family: BalanceScOffcPro;
+  src: url('../assets/fonts/OpenType TTF Pro/BalanceScOffcPro.ttf');
+}
+
+:root {
+	--icecore-primary-color: rgb(20, 134, 154);
+	--icecore-primary-mid-color: rgb(15, 54, 60);
+	--icecore-primary-dark-color: rgb(14, 35, 38);
+	--icecore-white: rgb(217, 223, 232);
+	--icecore-gray: rgb(65, 65, 66);
+	--icecore-green: rgb(53, 153, 70);
+	--icecore-light-green: rgb(79, 184, 72);
+	--icecore-orange: rgb(241, 105, 36);
+	--icecore-violet: rgb(172, 77, 157);
+	--icecore-yellow: rgb(188, 182, 54);
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+  font-family: BalanceOffcPro;
+}
+
+.canvas {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+svg{
+	pointer-events: none;
+}
+
+.blurrable{
+	filter: blur(0px);
+	transition-property: filter;
+	transition-duration: 0.75s;
+}
+
+.indented{
+	padding-left: 2vw;
+}
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: 0.4em;
+}
+
+#layout-overlay{
+	display: none;
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 10000;
+}
+
+.small-caps{
+	text-transform: lowercase;
+ 	font-family: BalanceScOffcPro;
+ 	font-variant: small-caps;
+}
+
+.ps__rail-x,
+.ps__rail-y {
+   opacity: 0.6;
+   width: 30px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+    left: -100px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(100, 100, 100, 0.0); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(20, 134, 154, 0.3);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

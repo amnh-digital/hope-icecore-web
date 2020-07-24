@@ -1,0 +1,10 @@
+{
+  "name": "hope-icecore-web",
+  "description": "Web version of HoPE Ice Core Interactive",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "express": "^4.17.0"
+  }
+}

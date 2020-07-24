@@ -87,13 +87,15 @@ class Background {
 	set scrolling(bScrolling) {
 		this.bScrolling = bScrolling;
 		if(this.bScrolling){
-			//this.currentImage = this.iceCoreBlur;
+			// this.currentImage = this.iceCoreBlur;
+			// document.getElementById('ice-core-img').src = this.iceCoreBlur.src;
 		} else {
 			this.setImage();
 		}
 	}
 
 	draw(p){
+		// console.log(p.velocity * 1000.0)
 		let blurAmount = 1000.0 * (p.velocity);
 		let blurFilter = document.getElementById('blur').children[0];
 		if (!isNaN(blurAmount)) blurFilter.setAttribute('stdDeviation', blurAmount + ',0');

@@ -12,7 +12,7 @@ var app = (function() {
   var ui = new Ui();
   var bScrolling = false;
   var scrollingTimeout = null;
-  var scrollingPosition = 0.0;
+  var scrollingPosition = {position: 0, velocity: 0};
   //var iceExtent = new Story({'startScaled': 0.0, 'endScaled':1.0, 'directory': 'sea_ice', 'imgId':'ice-extent-img'});
  //iceExtent.compose(0.0);
 
@@ -41,7 +41,8 @@ var app = (function() {
 
   function positionChanged(e, data){
     //console.log(`iwall:position: ${data.position.position}`);
-    scrollingPosition = data.position;
+    scrollingPosition = data;
+    if (!scrollingPosition.velocity) scrollingPosition.velocity = 0;
     ui.draw(scrollingPosition);
     if(!bScrolling){
       bScrolling = true;

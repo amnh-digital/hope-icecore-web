@@ -93,7 +93,7 @@ sub {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: rgba(100, 100, 100, 0.0); 
+    background: rgba(100, 100, 100, 0.0);
 }
 
 /* Handle */
@@ -104,5 +104,26 @@ sub {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #555;
+}
+
+
+.global-wrapper {
+  width: 100vw;
+  height: 56.25vw;  /* 1920 x 1080 ratio */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -28.125vw;
+  /* background-color: var(--black-color); */
+}
+@media (min-aspect-ratio: 1920/1080) {
+  .global-wrapper {
+    width: 177.777777778vh;
+    height: 100vh;
+    top: 0;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -88.888888889vh;
+  }
 }

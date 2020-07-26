@@ -181,6 +181,7 @@ var app = (function() {
     setTimeout(function(){
       positionTracker.increment(0.05);
       render();
+      $('.loading').removeClass('active');
     }, 100);
   }
 

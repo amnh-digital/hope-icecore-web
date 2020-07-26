@@ -59,7 +59,9 @@ function loadTextFileAjaxSync(filePath, mimeType)
 		let dElemWidth = dElem.offsetWidth;
 		let dElemHeight = dElem.offsetHeight;
 		let clipPath = utils.getStyle(dElem, "clip-path");
-		let clipDims = clipPath.match(/\(([^)]+)\)/)[1].split(',');
+    let matches = clipPath.match(/\(([^)]+)\)/);
+    if (!matches) return;
+		let clipDims = matches[1].split(',');
 		let dSvg = document.getElementById(elemId + '-svg');
 		let pathElem = document.createElementNS('http://www.w3.org/2000/svg',"path")
 		let pathStr = 'M0 0';

@@ -39,7 +39,10 @@ var app = (function() {
   }
 
   // window.addEventListener('keydown', event => keyPressed(event.key));
-  window.addEventListener('mousewheel', event => mouseScrolled(event.deltaY));
+  // window.addEventListener('mousewheel', event => mouseScrolled(event.deltaY));
+  $(window).on('wheel', function(event){
+    mouseScrolled(event.originalEvent.deltaY)
+  });
 
   function positionChanged(e, data){
     //console.log(`iwall:position: ${data.position.position}`);
@@ -146,6 +149,22 @@ var app = (function() {
     //     case 'm': document.body.style.cursor = document.body.style.cursor==='none' ? 'initial' : 'none';
     //   }
     // });
+
+    var touchHandler = new Hammer($('#global-wrapper')[0]);
+    // touchHandler.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+    var lastX = false;
+    touchHandler.on("panstart panmove panend", function(e) {
+      if (e.type === 'panstart') {
+        lastX = e.center.x;
+      } else if (e.type === 'panend') {
+        lastX = false;
+      } else if (e.type === 'panmove' && lastX !== false) {
+        var deltaX = -(lastX - e.center.x) * 0.0005;
+        lastX = e.center.x;
+        if (deltaX > 0) positionTracker.increment(deltaX);
+        else if (deltaX < 0) positionTracker.decrement(Math.abs(deltaX));
+      }
+    });
 
     // iwall events
     //ipcRenderer.on('data', dataReceived);
